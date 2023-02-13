@@ -1,0 +1,91 @@
+@import "mixin";
+@import "var";
+
+header {
+    background-image: linear-gradient(to right, $c-white 50%, $c-background 50%);
+
+    .wrapper-header {
+        @include flex('', space-between);
+        padding: $trim 0;
+
+        .left {
+            @include flex(center, '', '', $large);
+
+            ul {
+                @include flex('', '', '', $trim);
+
+                li {
+                    @include text('', $c-text-01, '', 400);
+                }
+            }
+        }
+
+        .right {
+            background-color: $c-background;
+        }
+    }
+}
+
+main {
+    .section-01 {
+        background-image: linear-gradient(to right, $c-white 50%, $c-background 50%);
+        padding: $x-large 0;
+
+        .wrapper-section {
+            @include flex('', space-between);
+
+            .left {
+                @include flex('', center, column, $trim);
+                width: 100%;
+                max-width: 500px;
+
+                h1 {
+                    @include text('', $c-text-02, '', 700, $large);
+                }
+
+                span {
+                    @include text('', $c-text-03, '', 700);
+                }
+
+                .wrapper-content {
+                    @include flex(center, '', '', $trim);
+                }
+
+                .learn {
+                    @include flex('', '', '', $gap);
+
+                    span {
+                        cursor: pointer;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            .right {
+                width: 100%;
+                max-width: 600px;
+            }
+        }
+    }
+}
+
+a {
+    border-radius: $small;
+
+    &.start {
+        background-color: $c-text-02;
+        padding: $gap $trim;
+        @include text('', $c-white, '', 500);
+    }
+
+    &:hover {
+        opacity: .85;
+    }
+}
+
+p {
+    @include text('', $c-text-01, '', 400);
+}
