@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap");
+/* line 5, ../scss/sucess.scss */
+header .wrapper-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+  position: relative;
+}
+/* line 10, ../scss/sucess.scss */
+header .wrapper-header .left {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+/* line 13, ../scss/sucess.scss */
+header .wrapper-header .left ul {
+  display: flex;
+  gap: 30px;
+}
+/* line 16, ../scss/sucess.scss */
+header .wrapper-header .left ul li {
+  color: #425466;
+  font-weight: 400;
+}
+@media screen and (max-width: 768px) {
+  /* line 13, ../scss/sucess.scss */
+  header .wrapper-header .left ul {
+    display: none;
+  }
+}
+/* line 24, ../scss/sucess.scss */
+header .wrapper-header .left ul.active {
+  top: 80px;
+}
+/* line 30, ../scss/sucess.scss */
+header .wrapper-header .right {
+  width: 100%;
+  max-width: 200px;
+}
+/* line 34, ../scss/sucess.scss */
+header .wrapper-header .right.active {
+  top: 216px;
+}
+@media screen and (max-width: 599px) {
+  /* line 30, ../scss/sucess.scss */
+  header .wrapper-header .right {
+    display: none;
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 44, ../scss/sucess.scss */
+  header .wrapper-header .menu-mobile {
+    display: none;
+  }
+}
+/* line 52, ../scss/sucess.scss */
+header .wrapper-header ul.active,
+header .wrapper-header .right.active {
+  position: absolute;
+  width: 100%;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  z-index: 999;
+}
+
+/* line 66, ../scss/sucess.scss */
+main .wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px 0;
+}
+/* line 70, ../scss/sucess.scss */
+main .wrapper .container-check {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* line 83, ../scss/sucess.scss */
+main .wrapper .container-check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+/* line 92, ../scss/sucess.scss */
+main .wrapper .checkmark {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  height: 50px;
+  width: 50px;
+  background-color: #1d1b67;
+  border-radius: 50%;
+}
+/* line 102, ../scss/sucess.scss */
+main .wrapper .container-check:hover input ~ .checkmark {
+  background-color: #1d1b67;
+}
+/* line 106, ../scss/sucess.scss */
+main .wrapper .container-check input:checked ~ .checkmark {
+  background-color: #1d1b67;
+}
+/* line 110, ../scss/sucess.scss */
+main .wrapper .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* line 116, ../scss/sucess.scss */
+main .wrapper .container-check input:checked ~ .checkmark:after {
+  display: block;
+}
+/* line 120, ../scss/sucess.scss */
+main .wrapper .container-check .checkmark:after {
+  left: 17px;
+  top: 13px;
+  width: 10px;
+  height: 15px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 132, ../scss/sucess.scss */
+main .wrapper h1 {
+  color: #000000;
+  font-weight: 700;
+  font-size: 30px;
+}
+/* line 136, ../scss/sucess.scss */
+main .wrapper .home {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+/* line 139, ../scss/sucess.scss */
+main .wrapper .home a {
+  color: #425466;
+  font-weight: 400;
+}
+
+/* line 147, ../scss/sucess.scss */
+footer .wrapper-footer {
+  display: grid;
+  gap: 30px;
+  grid-template: "logo logo logo logo" "one two three input" / auto auto auto auto;
+  padding: 80px 0;
+}
+/* line 153, ../scss/sucess.scss */
+footer .wrapper-footer .logo {
+  grid-area: logo;
+}
+/* line 157, ../scss/sucess.scss */
+footer .wrapper-footer .column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+/* line 160, ../scss/sucess.scss */
+footer .wrapper-footer .column ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+/* line 163, ../scss/sucess.scss */
+footer .wrapper-footer .column ul li {
+  color: #425466;
+  font-weight: 400;
+}
+/* line 168, ../scss/sucess.scss */
+footer .wrapper-footer .column.one {
+  grid-area: one;
+}
+/* line 172, ../scss/sucess.scss */
+footer .wrapper-footer .column.two {
+  grid-area: two;
+}
+/* line 176, ../scss/sucess.scss */
+footer .wrapper-footer .column.three {
+  grid-area: three;
+}
+/* line 181, ../scss/sucess.scss */
+footer .wrapper-footer .wrapper-input {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  grid-area: input;
+}
+/* line 185, ../scss/sucess.scss */
+footer .wrapper-footer .wrapper-input .input {
+  position: relative;
+}
+/* line 188, ../scss/sucess.scss */
+footer .wrapper-footer .wrapper-input .input input {
+  height: 70px;
+  border-radius: 5px;
+  border: 1px solid #a8a8a8;
+  padding-left: 15px;
+  width: 100%;
+}
+/* line 196, ../scss/sucess.scss */
+footer .wrapper-footer .wrapper-input .input .start {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  max-width: 200px;
+}
+@media screen and (max-width: 768px) {
+  /* line 147, ../scss/sucess.scss */
+  footer .wrapper-footer {
+    grid-template: "logo logo logo" "one two three" "input input input" / auto auto auto;
+  }
+}
+@media screen and (max-width: 599px) {
+  /* line 147, ../scss/sucess.scss */
+  footer .wrapper-footer {
+    grid-template: "logo logo" "one two" "three three" "input input" / auto auto;
+  }
+}
+
+/* line 220, ../scss/sucess.scss */
+button {
+  border-radius: 5px;
+  height: 50px;
+  width: 100%;
+}
+/* line 225, ../scss/sucess.scss */
+button.start {
+  background-color: #1d1b67;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+/* line 230, ../scss/sucess.scss */
+button:hover {
+  opacity: .85;
+}
+
+/* line 235, ../scss/sucess.scss */
+p {
+  color: #425466;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* line 240, ../scss/sucess.scss */
+h2 {
+  color: #1d1b67;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+/* line 244, ../scss/sucess.scss */
+.view {
+  color: #425466;
+  font-weight: 700;
+}

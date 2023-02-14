@@ -8,39 +8,75 @@ header .wrapper-header {
   display: flex;
   justify-content: space-between;
   padding: 30px 0;
+  position: relative;
 }
-/* line 11, ../scss/home.scss */
+/* line 12, ../scss/home.scss */
 header .wrapper-header .left {
   display: flex;
   align-items: center;
   gap: 50px;
 }
-/* line 14, ../scss/home.scss */
+/* line 15, ../scss/home.scss */
 header .wrapper-header .left ul {
   display: flex;
   gap: 30px;
 }
-/* line 17, ../scss/home.scss */
+/* line 18, ../scss/home.scss */
 header .wrapper-header .left ul li {
   color: #425466;
   font-weight: 400;
 }
-/* line 23, ../scss/home.scss */
-header .wrapper-header .right {
-  background-color: #46ccde;
+@media screen and (max-width: 768px) {
+  /* line 15, ../scss/home.scss */
+  header .wrapper-header .left ul {
+    display: none;
+  }
+}
+/* line 26, ../scss/home.scss */
+header .wrapper-header .left ul.active {
+  top: 80px;
+}
+/* line 33, ../scss/home.scss */
+header .wrapper-header .right.active {
+  top: 218px;
+}
+@media screen and (max-width: 768px) {
+  /* line 32, ../scss/home.scss */
+  header .wrapper-header .right {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 42, ../scss/home.scss */
+  header .wrapper-header .menu-mobile {
+    display: none;
+  }
+}
+/* line 50, ../scss/home.scss */
+header .wrapper-header ul.active,
+header .wrapper-header .right.active {
+  position: absolute;
+  width: 100%;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+@media screen and (max-width: 599px) {
+  /* line 4, ../scss/home.scss */
+  header {
+    background-image: none;
+  }
 }
 
-/* line 30, ../scss/home.scss */
+/* line 67, ../scss/home.scss */
 main .section-01 {
   background-image: linear-gradient(to right, #FFFFFF 50%, #46ccde 50%);
-  padding: 80px 0;
 }
-/* line 34, ../scss/home.scss */
-main .section-01 .wrapper-section {
-  display: flex;
-  justify-content: space-between;
-}
-/* line 37, ../scss/home.scss */
+/* line 71, ../scss/home.scss */
 main .section-01 .wrapper-section .left {
   display: flex;
   justify-content: center;
@@ -49,60 +85,378 @@ main .section-01 .wrapper-section .left {
   width: 100%;
   max-width: 500px;
 }
-/* line 42, ../scss/home.scss */
+/* line 76, ../scss/home.scss */
 main .section-01 .wrapper-section .left h1 {
   color: #1d1b67;
   font-weight: 700;
   font-size: 50px;
 }
-/* line 46, ../scss/home.scss */
-main .section-01 .wrapper-section .left span {
-  color: #425466;
-  font-weight: 700;
-}
-/* line 50, ../scss/home.scss */
+/* line 80, ../scss/home.scss */
 main .section-01 .wrapper-section .left .wrapper-content {
   display: flex;
   align-items: center;
   gap: 30px;
 }
-/* line 54, ../scss/home.scss */
+@media screen and (max-width: 768px) {
+  /* line 80, ../scss/home.scss */
+  main .section-01 .wrapper-section .left .wrapper-content {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  /* line 86, ../scss/home.scss */
+  main .section-01 .wrapper-section .left .wrapper-content .view {
+    padding-left: 50px;
+  }
+}
+@media screen and (max-width: 599px) {
+  /* line 80, ../scss/home.scss */
+  main .section-01 .wrapper-section .left .wrapper-content {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 30px;
+  }
+  /* line 94, ../scss/home.scss */
+  main .section-01 .wrapper-section .left .wrapper-content .view {
+    padding: 0;
+  }
+}
+/* line 101, ../scss/home.scss */
 main .section-01 .wrapper-section .left .learn {
   display: flex;
   gap: 10px;
 }
-/* line 57, ../scss/home.scss */
+/* line 104, ../scss/home.scss */
 main .section-01 .wrapper-section .left .learn span {
+  color: #425466;
+  font-weight: 700;
   cursor: pointer;
 }
-/* line 60, ../scss/home.scss */
+/* line 108, ../scss/home.scss */
 main .section-01 .wrapper-section .left .learn span:hover {
   text-decoration: underline;
 }
-/* line 67, ../scss/home.scss */
+@media screen and (max-width: 768px) {
+  /* line 101, ../scss/home.scss */
+  main .section-01 .wrapper-section .left .learn {
+    align-items: flex-start;
+  }
+}
+/* line 119, ../scss/home.scss */
 main .section-01 .wrapper-section .right {
   width: 100%;
   max-width: 600px;
 }
+@media screen and (max-width: 599px) {
+  /* line 119, ../scss/home.scss */
+  main .section-01 .wrapper-section .right {
+    margin: 80px 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 70, ../scss/home.scss */
+  main .section-01 .wrapper-section {
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 599px) {
+  /* line 70, ../scss/home.scss */
+  main .section-01 .wrapper-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 599px) {
+  /* line 67, ../scss/home.scss */
+  main .section-01 {
+    background-image: linear-gradient(to bottom, #FFFFFF 50%, #46ccde 50%);
+  }
+}
+/* line 145, ../scss/home.scss */
+main .section-02 .wrapper-section .left h2 {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 768px) {
+  /* line 145, ../scss/home.scss */
+  main .section-02 .wrapper-section .left h2 {
+    max-width: 300px;
+  }
+}
+@media screen and (max-width: 599px) {
+  /* line 145, ../scss/home.scss */
+  main .section-02 .wrapper-section .left h2 {
+    max-width: 100%;
+  }
+}
+/* line 159, ../scss/home.scss */
+main .section-02 .wrapper-section .left .people {
+  display: flex;
+  gap: 20px;
+}
+/* line 162, ../scss/home.scss */
+main .section-02 .wrapper-section .left .people img {
+  max-width: 35px;
+}
+@media screen and (max-width: 768px) {
+  /* line 159, ../scss/home.scss */
+  main .section-02 .wrapper-section .left .people {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+@media screen and (max-width: 599px) {
+  /* line 159, ../scss/home.scss */
+  main .section-02 .wrapper-section .left .people {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 144, ../scss/home.scss */
+  main .section-02 .wrapper-section .left {
+    display: flex;
+    align-items: flex-start;
+    gap: 100px;
+  }
+}
+@media screen and (max-width: 599px) {
+  /* line 144, ../scss/home.scss */
+  main .section-02 .wrapper-section .left {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+/* line 184, ../scss/home.scss */
+main .section-02 .wrapper-section .right {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+@media screen and (max-width: 768px) {
+  /* line 184, ../scss/home.scss */
+  main .section-02 .wrapper-section .right {
+    gap: 30px;
+  }
+}
+/* line 192, ../scss/home.scss */
+main .section-02 .wrapper-section .left,
+main .section-02 .wrapper-section .right {
+  width: 50%;
+}
+@media screen and (max-width: 768px) {
+  /* line 192, ../scss/home.scss */
+  main .section-02 .wrapper-section .left,
+  main .section-02 .wrapper-section .right {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 143, ../scss/home.scss */
+  main .section-02 .wrapper-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+/* line 207, ../scss/home.scss */
+main .section-03 {
+  background-color: #cdf9ff;
+}
+/* line 212, ../scss/home.scss */
+main .section-03 .wrapper-section .left,
+main .section-03 .wrapper-section .right {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 550px;
+}
+@media screen and (max-width: 768px) {
+  /* line 212, ../scss/home.scss */
+  main .section-03 .wrapper-section .left,
+  main .section-03 .wrapper-section .right {
+    max-width: 100%;
+  }
+}
+/* line 223, ../scss/home.scss */
+main .section-03 .wrapper-section span {
+  color: #3b60bf;
+  font-weight: 700;
+}
+/* line 227, ../scss/home.scss */
+main .section-03 .wrapper-section .view {
+  color: #425466;
+}
+/* line 231, ../scss/home.scss */
+main .section-03 .wrapper-section h2 {
+  color: #005661;
+  width: 100%;
+  max-width: 400px;
+}
+/* line 237, ../scss/home.scss */
+main .section-03 .wrapper-section a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 250px;
+}
+/* line 243, ../scss/home.scss */
+main .section-03 .wrapper-section .right .view {
+  display: flex;
+  gap: 10px;
+}
+/* line 246, ../scss/home.scss */
+main .section-03 .wrapper-section .right .view img {
+  max-width: 15px;
+}
+@media screen and (max-width: 768px) {
+  /* line 210, ../scss/home.scss */
+  main .section-03 .wrapper-section {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+/* line 258, ../scss/home.scss */
+main .section-01,
+main .section-02,
+main .section-03 {
+  padding: 80px 0;
+}
+/* line 263, ../scss/home.scss */
+main .section-01 .wrapper-section,
+main .section-02 .wrapper-section,
+main .section-03 .wrapper-section {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  /* line 258, ../scss/home.scss */
+  main .section-01,
+  main .section-02,
+  main .section-03 {
+    padding: 30px 0;
+  }
+}
 
-/* line 75, ../scss/home.scss */
+/* line 274, ../scss/home.scss */
+footer .wrapper-footer {
+  display: grid;
+  gap: 30px;
+  grid-template: "logo logo logo logo" "one two three input" / auto auto auto auto;
+  padding: 80px 0;
+}
+/* line 280, ../scss/home.scss */
+footer .wrapper-footer .logo {
+  grid-area: logo;
+}
+/* line 284, ../scss/home.scss */
+footer .wrapper-footer .column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+/* line 287, ../scss/home.scss */
+footer .wrapper-footer .column ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+/* line 290, ../scss/home.scss */
+footer .wrapper-footer .column ul li {
+  color: #425466;
+  font-weight: 400;
+}
+/* line 295, ../scss/home.scss */
+footer .wrapper-footer .column.one {
+  grid-area: one;
+}
+/* line 299, ../scss/home.scss */
+footer .wrapper-footer .column.two {
+  grid-area: two;
+}
+/* line 303, ../scss/home.scss */
+footer .wrapper-footer .column.three {
+  grid-area: three;
+}
+/* line 308, ../scss/home.scss */
+footer .wrapper-footer .wrapper-input {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  grid-area: input;
+}
+/* line 312, ../scss/home.scss */
+footer .wrapper-footer .wrapper-input .input {
+  position: relative;
+}
+/* line 315, ../scss/home.scss */
+footer .wrapper-footer .wrapper-input .input input {
+  height: 70px;
+  border-radius: 5px;
+  border: 1px solid #a8a8a8;
+  padding-left: 15px;
+  width: 100%;
+}
+/* line 323, ../scss/home.scss */
+footer .wrapper-footer .wrapper-input .input .start {
+  position: absolute;
+  top: 7px;
+  right: 5px;
+}
+@media screen and (max-width: 768px) {
+  /* line 274, ../scss/home.scss */
+  footer .wrapper-footer {
+    grid-template: "logo logo logo" "one two three" "input input input" / auto auto auto;
+  }
+}
+@media screen and (max-width: 599px) {
+  /* line 274, ../scss/home.scss */
+  footer .wrapper-footer {
+    grid-template: "logo logo" "one two" "three three" "input input" / auto auto;
+  }
+}
+
+/* line 346, ../scss/home.scss */
 a {
   border-radius: 5px;
 }
-/* line 78, ../scss/home.scss */
+/* line 349, ../scss/home.scss */
 a.start {
   background-color: #1d1b67;
-  padding: 10px 30px;
+  padding: 15px 30px;
   color: #FFFFFF;
   font-weight: 500;
 }
-/* line 84, ../scss/home.scss */
+/* line 355, ../scss/home.scss */
 a:hover {
   opacity: .85;
 }
 
-/* line 89, ../scss/home.scss */
+/* line 360, ../scss/home.scss */
 p {
   color: #425466;
   font-weight: 400;
+  line-height: 1.5;
+}
+
+/* line 365, ../scss/home.scss */
+h2 {
+  color: #1d1b67;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+/* line 369, ../scss/home.scss */
+.view {
+  color: #425466;
+  font-weight: 700;
 }

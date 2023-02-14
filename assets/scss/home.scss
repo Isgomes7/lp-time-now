@@ -7,6 +7,7 @@ header {
     .wrapper-header {
         @include flex('', space-between);
         padding: $trim 0;
+        position: relative;
 
         .left {
             @include flex(center, '', '', $large);
@@ -17,23 +18,56 @@ header {
                 li {
                     @include text('', $c-text-01, '', 400);
                 }
+
+                @include bp(max-width, $bp-medium) {
+                    display: none;
+                }
+
+                &.active {  
+                    top: $x-large;
+                }
             }
         }
 
         .right {
-            background-color: $c-background;
+            &.active {
+                top: 218px;
+            }
+
+            @include bp(max-width, $bp-medium) {
+                display: none;
+            }
         }
+
+        .menu-mobile {
+            @include bp(min-width, $bp-medium) {
+                display: none;
+            }
+        }
+
+        ul,
+        .right {
+            &.active {
+                position: absolute;
+                width: 100%;
+                background-color: $c-white;
+                @include flex(center, '', column, $trim);
+                padding: $trim;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            }
+        }
+    }
+
+    @include bp(max-width, $bp-small) {
+        background-image: none;
     }
 }
 
 main {
     .section-01 {
         background-image: linear-gradient(to right, $c-white 50%, $c-background 50%);
-        padding: $x-large 0;
 
         .wrapper-section {
-            @include flex('', space-between);
-
             .left {
                 @include flex('', center, column, $trim);
                 width: 100%;
@@ -43,23 +77,41 @@ main {
                     @include text('', $c-text-02, '', 700, $large);
                 }
 
-                span {
-                    @include text('', $c-text-03, '', 700);
-                }
-
                 .wrapper-content {
                     @include flex(center, '', '', $trim);
+
+                    @include bp(max-width, $bp-medium) {
+                        @include flex(flex-start, '', column);
+
+                        .view {
+                            padding-left: $large;
+                        }
+                    }
+
+                    @include bp(max-width, $bp-small) {
+                        @include flex(center, '', row, $trim);
+
+                        .view {
+                            padding: 0;
+                        }
+                    }
+
                 }
 
                 .learn {
                     @include flex('', '', '', $gap);
 
                     span {
+                        @include text('', $c-text-03, '', 700);
                         cursor: pointer;
 
                         &:hover {
                             text-decoration: underline;
                         }
+                    }
+
+                    @include bp(max-width, $bp-medium) {
+                        align-items: flex-start;
                     }
                 }
             }
@@ -67,7 +119,226 @@ main {
             .right {
                 width: 100%;
                 max-width: 600px;
+
+                @include bp(max-width, $bp-small) {
+                    margin: $x-large 0;
+                }
             }
+
+            @include bp(max-width, $bp-medium) {
+                gap: $trim;
+            }
+
+            @include bp(max-width, $bp-small) {
+                @include flex('', '', column, $trim);
+            }
+        }
+
+        @include bp(max-width, $bp-small) {
+            background-image: linear-gradient(to bottom, $c-white 50%, $c-background 50%);
+        }
+    }
+
+    .section-02 {
+        .wrapper-section {
+            .left {
+                h2 {
+                    width: 100%;
+                    max-width: 500px;
+                    margin-bottom: $trim;
+
+                    @include bp(max-width, $bp-medium) {
+                        max-width: 300px;
+                    }
+
+                    @include bp(max-width, $bp-small) {
+                        max-width: 100%;
+                    }
+                }
+
+                .people {
+                    @include flex('', '', '', $box-spacing);
+
+                    img {
+                        max-width: $trim + $small;
+                    }
+
+                    @include bp(max-width, $bp-medium) {
+                        @include grid('', '', '', 1fr 1fr 1fr 1fr 1fr);
+                    }
+
+                    @include bp(max-width, $bp-small) {
+                        @include grid('', '', '', 1fr 1fr 1fr 1fr 1fr 1fr);
+                    }
+                }
+
+                @include bp(max-width, $bp-medium) {
+                    @include flex(flex-start, '', '', $big );
+                }
+
+                @include bp(max-width, $bp-small) {
+                    @include flex(flex-start, '', column, $trim);
+                }
+            }
+
+            .right {
+                @include flex('', space-between, column);
+
+                @include bp(max-width, $bp-medium) {
+                    gap: $trim;
+                }
+            }
+
+            .left,
+            .right {
+                width: 50%;
+
+                @include bp(max-width, $bp-medium) {
+                    width: 100%;
+                }
+            }
+
+            @include bp(max-width, $bp-medium) {
+                @include flex('', '', column, $trim-small);
+            }
+        }
+    }
+
+    .section-03 {
+        background-color: $c-background-02;
+
+        .wrapper-section {
+
+            .left,
+            .right {
+                @include flex('', space-between, column, $box-spacing);
+                width: 100%;
+                max-width: 550px;
+
+                @include bp(max-width, $bp-medium) {
+                    max-width: 100%
+                }
+            }
+
+            span {
+                @include text('', $c-text-05, '', 700);
+            }
+
+            .view {
+                color: $c-text-03;
+            }
+
+            h2 {
+                color: $c-text-04;
+                width: 100%;
+                max-width: 400px;
+            }
+
+            a {
+                @include flex(center, center);
+                max-width: 250px;
+            }
+
+            .right {
+                .view {
+                    @include flex('', '', '', $gap);
+
+                    img {
+                        max-width: $trim-small;
+                    }
+                }
+            }
+
+            @include bp(max-width, $bp-medium) {
+                @include flex('', '', column, $large );
+            }
+        }
+    }
+
+    .section-01,
+    .section-02,
+    .section-03 {
+        padding: $x-large 0;
+
+        .wrapper-section {
+            @include flex('', space-between);
+        }
+
+        @include bp(max-width, $bp-medium) {
+            padding: $trim 0;
+        }
+    }
+}
+
+footer {
+    .wrapper-footer {
+        @include grid('', '', $trim);
+        grid-template: "logo logo logo logo"
+            "one two three input" / auto auto auto auto;
+        padding: $x-large 0;
+
+        .logo {
+            grid-area: logo;
+        }
+
+        .column {
+            @include flex('', '', column, $trim);
+
+            ul {
+                @include flex('', '', column, $trim-small);
+
+                li {
+                    @include text('', $c-text-01, '', 400);
+                }
+            }
+
+            &.one {
+                grid-area: one;
+            }
+
+            &.two {
+                grid-area: two;
+            }
+
+            &.three {
+                grid-area: three;
+            }
+        }
+
+        .wrapper-input {
+            @include flex('', center, column, $trim-small);
+            grid-area: input;
+
+            .input {
+                position: relative;
+
+                input {
+                    height: $large + $box-spacing;
+                    border-radius: $small;
+                    border: 1px solid $c-border;
+                    padding-left: $trim-small;
+                    width: 100%;
+                }
+
+                .start {
+                    position: absolute;
+                    top: $small + 2px;
+                    right: $small;
+                }
+            }
+        }
+
+        @include bp(max-width, $bp-medium) {
+            grid-template: "logo logo logo"
+                "one two three"
+                "input input input" / auto auto auto;
+        }
+
+        @include bp(max-width, $bp-small) {
+            grid-template: "logo logo"
+                "one two"
+                "three three"
+                "input input" / auto auto;
         }
     }
 }
@@ -77,7 +348,7 @@ a {
 
     &.start {
         background-color: $c-text-02;
-        padding: $gap $trim;
+        padding: $trim-small $trim;
         @include text('', $c-white, '', 500);
     }
 
@@ -88,4 +359,13 @@ a {
 
 p {
     @include text('', $c-text-01, '', 400);
+    line-height: 1.5;
+}
+
+h2 {
+    @include text('', $c-text-02, '', 700, $trim);
+}
+
+.view {
+    @include text('', $c-text-03, '', 700);
 }

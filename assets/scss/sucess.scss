@@ -1,0 +1,246 @@
+@import "mixin";
+@import "var";
+
+header {
+    .wrapper-header {
+        @include flex('', space-between);
+        padding: $trim 0;
+        position: relative;
+
+        .left {
+            @include flex(center, '', '', $large);
+
+            ul {
+                @include flex('', '', '', $trim);
+
+                li {
+                    @include text('', $c-text-01, '', 400);
+                }
+
+                @include bp(max-width, $bp-medium) {
+                    display: none;
+                }
+
+                &.active {
+                    top: $x-large;
+                }
+            }
+        }
+
+        .right {
+            width: 100%;
+            max-width: 200px;
+
+            &.active {
+                top: 216px;
+            }
+
+            @include bp(max-width, $bp-small) {
+                display: none;
+                max-width: 100%;
+            }
+        }
+
+        .menu-mobile {
+            @include bp(min-width, $bp-medium) {
+                display: none;
+            }
+        }
+
+        ul,
+        .right {
+            &.active {
+                position: absolute;
+                width: 100%;
+                background-color: $c-white;
+                @include flex(center, '', column, $trim);
+                padding: $trim;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                z-index: 999;
+            }
+        }
+    }
+}
+
+main {
+    .wrapper {
+        @include flex(center, '', column, $trim);
+        padding: $large 0;
+
+        .container-check {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .container-check input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+
+        .checkmark {
+            position: absolute;
+            top: -30px;
+            left: 0;
+            height: $large;
+            width: $large;
+            background-color: $c-text-02;
+            border-radius: 50%;
+        }
+
+        .container-check:hover input~.checkmark {
+            background-color: $c-text-02;
+        }
+
+        .container-check input:checked~.checkmark {
+            background-color: $c-text-02;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .container-check input:checked~.checkmark:after {
+            display: block;
+        }
+
+        .container-check .checkmark:after {
+            left: 17px;
+            top: 13px;
+            width: $gap;
+            height: $trim-small;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        h1 {
+            @include text('', $c-black, '', 700, $trim);
+        }
+
+        .home {
+            @include flex(center, '', '', $trim-small);
+
+            a {
+                @include text('', $c-text-01, '', 400);
+            }
+        }
+    }
+}
+
+footer {
+    .wrapper-footer {
+        @include grid('', '', $trim);
+        grid-template: "logo logo logo logo"
+            "one two three input" / auto auto auto auto;
+        padding: $x-large 0;
+
+        .logo {
+            grid-area: logo;
+        }
+
+        .column {
+            @include flex('', '', column, $trim);
+
+            ul {
+                @include flex('', '', column, $trim-small);
+
+                li {
+                    @include text('', $c-text-01, '', 400);
+                }
+            }
+
+            &.one {
+                grid-area: one;
+            }
+
+            &.two {
+                grid-area: two;
+            }
+
+            &.three {
+                grid-area: three;
+            }
+        }
+
+        .wrapper-input {
+            @include flex('', center, column, $trim-small);
+            grid-area: input;
+
+            .input {
+                position: relative;
+
+                input {
+                    height: $large + $box-spacing;
+                    border-radius: $small;
+                    border: 1px solid $c-border;
+                    padding-left: $trim-small;
+                    width: 100%;
+                }
+
+                .start {
+                    position: absolute;
+                    top: $gap;
+                    right: $small;
+                    max-width: 200px;
+                }
+            }
+        }
+
+        @include bp(max-width, $bp-medium) {
+            grid-template: "logo logo logo"
+                "one two three"
+                "input input input" / auto auto auto;
+        }
+
+        @include bp(max-width, $bp-small) {
+            grid-template: "logo logo"
+                "one two"
+                "three three"
+                "input input" / auto auto;
+        }
+    }
+}
+
+button {
+    border-radius: $small;
+    height: $large;
+    width: 100%;
+
+    &.start {
+        background-color: $c-text-02;
+        @include text('', $c-white, '', 500);
+    }
+
+    &:hover {
+        opacity: .85;
+    }
+}
+
+p {
+    @include text('', $c-text-01, '', 400);
+    line-height: 1.5;
+}
+
+h2 {
+    @include text('', $c-text-02, '', 700, $trim);
+}
+
+.view {
+    @include text('', $c-text-03, '', 700);
+}

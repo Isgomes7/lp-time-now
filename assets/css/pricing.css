@@ -1,0 +1,441 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap");
+/* line 5, ../scss/pricing.scss */
+header .wrapper-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+  position: relative;
+}
+/* line 10, ../scss/pricing.scss */
+header .wrapper-header .left {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+/* line 13, ../scss/pricing.scss */
+header .wrapper-header .left ul {
+  display: flex;
+  gap: 30px;
+}
+/* line 16, ../scss/pricing.scss */
+header .wrapper-header .left ul li {
+  color: #425466;
+  font-weight: 400;
+}
+/* line 20, ../scss/pricing.scss */
+header .wrapper-header .left ul li:nth-child(2) {
+  font-weight: 700;
+}
+@media screen and (max-width: 768px) {
+  /* line 13, ../scss/pricing.scss */
+  header .wrapper-header .left ul {
+    display: none;
+  }
+}
+/* line 28, ../scss/pricing.scss */
+header .wrapper-header .left ul.active {
+  top: 80px;
+}
+/* line 34, ../scss/pricing.scss */
+header .wrapper-header .right {
+  width: 100%;
+  max-width: 200px;
+}
+/* line 38, ../scss/pricing.scss */
+header .wrapper-header .right.active {
+  top: 216px;
+}
+@media screen and (max-width: 599px) {
+  /* line 34, ../scss/pricing.scss */
+  header .wrapper-header .right {
+    display: none;
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 48, ../scss/pricing.scss */
+  header .wrapper-header .menu-mobile {
+    display: none;
+  }
+}
+/* line 56, ../scss/pricing.scss */
+header .wrapper-header ul.active,
+header .wrapper-header .right.active {
+  position: absolute;
+  width: 100%;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* line 70, ../scss/pricing.scss */
+main .section-01 .wrapper-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+/* line 73, ../scss/pricing.scss */
+main .section-01 .wrapper-section h1 {
+  color: #000000;
+  text-align: center;
+  font-weight: 700;
+  font-size: 70px;
+}
+@media screen and (max-width: 599px) {
+  /* line 73, ../scss/pricing.scss */
+  main .section-01 .wrapper-section h1 {
+    font-size: 60px;
+    text-align: center;
+  }
+}
+/* line 82, ../scss/pricing.scss */
+main .section-01 .wrapper-section .content {
+  width: 100%;
+  max-width: 850px;
+  text-align: center;
+}
+/* line 88, ../scss/pricing.scss */
+main .section-01 .wrapper-section .wrapper-options {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+/* line 92, ../scss/pricing.scss */
+main .section-01 .wrapper-section .wrapper-options p.month {
+  font-weight: 700;
+}
+/* line 95, ../scss/pricing.scss */
+main .section-01 .wrapper-section .wrapper-options p.month.active {
+  font-weight: 400;
+}
+/* line 101, ../scss/pricing.scss */
+main .section-01 .wrapper-section .wrapper-options p.year.active {
+  font-weight: 700;
+}
+/* line 108, ../scss/pricing.scss */
+main .section-01 .wrapper-section .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+/* line 115, ../scss/pricing.scss */
+main .section-01 .wrapper-section .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* line 121, ../scss/pricing.scss */
+main .section-01 .wrapper-section .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #3a84f7;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+/* line 133, ../scss/pricing.scss */
+main .section-01 .wrapper-section .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+/* line 145, ../scss/pricing.scss */
+main .section-01 .wrapper-section input:checked + .slider {
+  background-color: #2196F3;
+}
+/* line 149, ../scss/pricing.scss */
+main .section-01 .wrapper-section input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+/* line 153, ../scss/pricing.scss */
+main .section-01 .wrapper-section input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/* line 159, ../scss/pricing.scss */
+main .section-01 .wrapper-section .slider.round {
+  border-radius: 34px;
+}
+/* line 163, ../scss/pricing.scss */
+main .section-01 .wrapper-section .slider.round:before {
+  border-radius: 50%;
+}
+/* line 170, ../scss/pricing.scss */
+main .section-02 .wrapper-section {
+  display: grid;
+  justify-content: space-between;
+  grid-template: "first two last" / auto auto auto;
+}
+/* line 174, ../scss/pricing.scss */
+main .section-02 .wrapper-section .item {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid #cdcdcd;
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+}
+/* line 181, ../scss/pricing.scss */
+main .section-02 .wrapper-section .item .price {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+/* line 184, ../scss/pricing.scss */
+main .section-02 .wrapper-section .item .price .value {
+  color: #000000;
+  font-weight: 700;
+  font-size: 30px;
+}
+/* line 188, ../scss/pricing.scss */
+main .section-02 .wrapper-section .item .price .value.months.active {
+  display: none;
+}
+/* line 193, ../scss/pricing.scss */
+main .section-02 .wrapper-section .item .price .value.years {
+  display: none;
+}
+/* line 196, ../scss/pricing.scss */
+main .section-02 .wrapper-section .item .price .value.years.active {
+  display: block;
+}
+/* line 202, ../scss/pricing.scss */
+main .section-02 .wrapper-section .item .price .month,
+main .section-02 .wrapper-section .item .price .year {
+  color: #a8a8a8;
+  font-weight: 400;
+  font-size: 15px;
+}
+/* line 208, ../scss/pricing.scss */
+main .section-02 .wrapper-section .item .row {
+  border: 1px solid #cdcdcd;
+  width: 100%;
+  margin: 10px 0;
+}
+/* line 214, ../scss/pricing.scss */
+main .section-02 .wrapper-section .item ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+/* line 217, ../scss/pricing.scss */
+main .section-02 .wrapper-section .item ul li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+/* line 222, ../scss/pricing.scss */
+main .section-02 .wrapper-section .item a {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* line 227, ../scss/pricing.scss */
+main .section-02 .wrapper-section .item.first {
+  grid-area: first;
+  max-height: 460px;
+}
+@media screen and (max-width: 768px) {
+  /* line 227, ../scss/pricing.scss */
+  main .section-02 .wrapper-section .item.first {
+    max-height: 100%;
+  }
+}
+/* line 236, ../scss/pricing.scss */
+main .section-02 .wrapper-section .item.last {
+  grid-area: last;
+  max-height: 400px;
+}
+@media screen and (max-width: 768px) {
+  /* line 236, ../scss/pricing.scss */
+  main .section-02 .wrapper-section .item.last {
+    max-height: 100%;
+  }
+}
+/* line 245, ../scss/pricing.scss */
+main .section-02 .wrapper-section .item.two {
+  grid-area: two;
+}
+@media screen and (max-width: 768px) {
+  /* line 174, ../scss/pricing.scss */
+  main .section-02 .wrapper-section .item {
+    justify-content: space-between;
+    max-width: 100%;
+  }
+}
+/* line 256, ../scss/pricing.scss */
+main .section-02 .wrapper-section .month.active {
+  display: none;
+}
+/* line 261, ../scss/pricing.scss */
+main .section-02 .wrapper-section .year {
+  display: none;
+}
+/* line 264, ../scss/pricing.scss */
+main .section-02 .wrapper-section .year.active {
+  display: block;
+}
+@media screen and (max-width: 599px) {
+  /* line 170, ../scss/pricing.scss */
+  main .section-02 .wrapper-section {
+    display: grid;
+    gap: 30px;
+    grid-template: "first" "two" "last" / auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 170, ../scss/pricing.scss */
+  main .section-02 .wrapper-section {
+    display: grid;
+    gap: 30px;
+    grid-template: "first two" "last last" / auto auto;
+  }
+}
+/* line 284, ../scss/pricing.scss */
+main .section-01,
+main .section-02 {
+  padding: 50px 0;
+}
+@media screen and (max-width: 599px) {
+  /* line 284, ../scss/pricing.scss */
+  main .section-01,
+  main .section-02 {
+    padding: 30px 0;
+  }
+}
+
+/* line 295, ../scss/pricing.scss */
+footer .wrapper-footer {
+  display: grid;
+  gap: 30px;
+  grid-template: "logo logo logo logo" "one two three input" / auto auto auto auto;
+  padding: 80px 0;
+}
+/* line 301, ../scss/pricing.scss */
+footer .wrapper-footer .logo {
+  grid-area: logo;
+}
+/* line 305, ../scss/pricing.scss */
+footer .wrapper-footer .column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+/* line 308, ../scss/pricing.scss */
+footer .wrapper-footer .column ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+/* line 311, ../scss/pricing.scss */
+footer .wrapper-footer .column ul li {
+  color: #425466;
+  font-weight: 400;
+}
+/* line 316, ../scss/pricing.scss */
+footer .wrapper-footer .column.one {
+  grid-area: one;
+}
+/* line 320, ../scss/pricing.scss */
+footer .wrapper-footer .column.two {
+  grid-area: two;
+}
+/* line 324, ../scss/pricing.scss */
+footer .wrapper-footer .column.three {
+  grid-area: three;
+}
+/* line 329, ../scss/pricing.scss */
+footer .wrapper-footer .wrapper-input {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  grid-area: input;
+}
+/* line 333, ../scss/pricing.scss */
+footer .wrapper-footer .wrapper-input .input {
+  position: relative;
+}
+/* line 336, ../scss/pricing.scss */
+footer .wrapper-footer .wrapper-input .input input {
+  height: 70px;
+  border-radius: 5px;
+  border: 1px solid #a8a8a8;
+  padding-left: 15px;
+  width: 100%;
+}
+/* line 344, ../scss/pricing.scss */
+footer .wrapper-footer .wrapper-input .input .start {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  max-width: 200px;
+}
+@media screen and (max-width: 768px) {
+  /* line 295, ../scss/pricing.scss */
+  footer .wrapper-footer {
+    grid-template: "logo logo logo" "one two three" "input input input" / auto auto auto;
+  }
+}
+@media screen and (max-width: 599px) {
+  /* line 295, ../scss/pricing.scss */
+  footer .wrapper-footer {
+    grid-template: "logo logo" "one two" "three three" "input input" / auto auto;
+  }
+}
+
+/* line 368, ../scss/pricing.scss */
+button, a {
+  border-radius: 5px;
+  height: 50px;
+  width: 100%;
+}
+/* line 373, ../scss/pricing.scss */
+button.start, a.start {
+  background-color: #1d1b67;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+/* line 378, ../scss/pricing.scss */
+button:hover, a:hover {
+  opacity: .85;
+}
+
+/* line 383, ../scss/pricing.scss */
+p {
+  color: #425466;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* line 388, ../scss/pricing.scss */
+h2 {
+  color: #1d1b67;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+/* line 392, ../scss/pricing.scss */
+.view {
+  color: #425466;
+  font-weight: 700;
+}
